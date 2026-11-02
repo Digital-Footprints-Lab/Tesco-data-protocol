@@ -3,7 +3,7 @@
 1. Upon data collection, the research team should have received:
     1. A reference code from each participant (e.g., extracted from survey responses)
     2. A verification code from each participant
-    3. An email sent from Tesco titled "Customer data request" that contains the link to download the data from each participant (it is likely that each request will result in multiple emails)
+    3. An email sent by Tesco titled "Customer data request" that contains the link to download the data from each participant (it is likely that each request will result in multiple emails)
 
 2. The research team should check that:
     1. The verification codes are in the correct format, which consists of 6-digit combinations of numbers and letters (they do _not_ have to have numbers and can have only letters)
@@ -23,7 +23,7 @@ jq -c . ./path/*.json | sed 's/\\"//g'| sed 's/\\r//g' | sed 's/\\\\/ /g' | sed 
 
 The first part of the one-liner (i.e., `jq -c ...`) will print each .JSON file onto a new line in the output file, while the next few parts (i.e., `sed ...`) are ad-hoc solutions to handle some characters that can cause issues when importing the data into another ecosystem. Here the code will delete all instances of `\"`, `\r`, and other patterns because they cause errors in PostgreSQL.
 
-# Data Import 
+# Data Import
 
 ## PostgreSQL
 
